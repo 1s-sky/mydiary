@@ -54,7 +54,7 @@ public class DiaryController {
 
     //위치가 바뀌면 바뀐 위치를 디비에 저장줌
     @PostMapping("/postData")
-    public String PostData(@RequestParam Map<String, Object> vo){
+    public void PostData(@RequestParam Map<String, Object> vo){
         String sql="UPDATE diary SET xpos = ?, ypos = ? where did=?";
         String xpos = vo.get("xpos").toString();
         String ypos = vo.get("ypos").toString();
@@ -62,7 +62,6 @@ public class DiaryController {
         int x = Integer.parseInt(xpos.split("p")[0]);
         int y = Integer.parseInt(ypos.split("p")[0]);
         jdbcTemplate.update(sql,x, y,did);
-        return "postData";
     }
 
     private RowMapper<Diary> diaryRowMapper() {
