@@ -1,0 +1,29 @@
+@font-face {
+  font-family : 'prtnight';
+  src : url("Cafe24Oneprettynight-v2.0.otf")
+}
+html{
+	font-family : 'prtnight';
+  	background-image: url("background-img.png");
+  	background-size : cover;
+}
+
+button {
+    font-family : 'prtnight';
+	border: 1px;
+	background: #fff;
+	color: #000000;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 200ms ease;
+}
+.diary{
+    width: 100px;
+    height: 120px;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    padding : 15px;
+}

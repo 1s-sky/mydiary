@@ -1,0 +1,46 @@
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<body>
+<button type="button" onclick="location.href='/addDiary';">일기쓰기</button>
+
+<table>
+    <c:forEach var="item" items="${diaryList}">
+        <div style="left=${item.xpos}+px">
+            <tr>
+            <td>${item.title}</td>
+            <td>${item.text}</td>
+        </tr>
+        </div>
+    </c:forEach>
+    <div id="table"></div>
+
+    <!--<script src="drawDiary.js"></script>-->
+
+    <script type="text/javascript">
+    console.log(${diaryList}.get(1)});
+
+
+        widget.init("table", function () {}); // widget 그리기
+
+        _widget.init = function (table_id) {
+            //table div
+            let table = document.getElementById(table_id);
+            //db에서 정보 받아오기
+            for (let diary in ${diaryList}) {
+                let div = create_widget(diary);
+                table.appendChild(div);
+            }
+        }
+         function create_widget(item) {
+                let div = document.createElement("div");
+                div.setAttribute("id", `widget${item.widget_id}`);
+                div.style.position = "absolute";
+                div.style.left = item.xpos + "px";
+                div.style.top = item.ypos + "px";
+
+                return div;
+         }
+    </script>
+</body>
+</html>
