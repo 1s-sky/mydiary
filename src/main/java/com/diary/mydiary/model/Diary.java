@@ -1,12 +1,28 @@
 package com.diary.mydiary.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.NotEmpty;
+
 public class Diary {
+    @JsonIgnore
     int did;
+    @JsonIgnore
     String uid;
+    @NotEmpty
     String title;
     String text;
+    @JsonIgnore
     int xpos;
+    @JsonIgnore
     int ypos;
+
+    public Diary(){}
+    public Diary(String title, String text){
+        this.title = title;
+        this.text = text;
+        this.xpos = 50;
+        this.ypos = 50;
+    }
 
     public int getDid() {
         return did;

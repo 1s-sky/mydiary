@@ -13,4 +13,5 @@
         }); // widget 그리기
     </script>
 </body>
+<link rel="stylesheet" href="resources/css/home.css">
 </html>
