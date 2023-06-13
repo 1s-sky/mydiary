@@ -28,13 +28,13 @@ public class SignupController {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	// 커맨드 객체 사용
-	@PostMapping("/submit")
+	@PostMapping("/signupSubmit")
 	public String signup(@ModelAttribute("user") @Validated User user, Errors errors, Model model) {
 		if(errors.hasErrors()) {
 			return "signup";
 		}
 		
-		// findAll 한 다음에 거기에 id가 있는지 확인해야겠다
+		// findAll 이후 입력된 id가 이미 존재하는지 확인
 		List<User> results = jdbcTemplate.query(
 				"select * from user where id = ?",
 				new RowMapper<User>() {
@@ -59,15 +59,14 @@ public class SignupController {
 			return "signup";
 		}
 		
-		
 		String sql = "INSERT INTO user (id, pw) values (?,?)";
 		jdbcTemplate.update(sql, user.getId(), user.getPw());
 		
-		return "";
+		return "index";
 		
 	}
 	
-	@GetMapping("/submit")
+	@GetMapping("/signupSubmit")
 	public String signupRedirect() {	
 		return "redirect:/";
 	}

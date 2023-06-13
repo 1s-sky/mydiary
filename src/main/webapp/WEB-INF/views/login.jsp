@@ -13,7 +13,7 @@
 
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<form:form novalidate="novalidate" action="submit2" modelAttribute="loginCommand">
+<form:form novalidate="novalidate" action="loginSubmit" modelAttribute="loginCommand">
 	<p> <label> <spring:message code="id" />:
 	<form:input path="id" /><br>
 	<form:errors path="id" /> </label> </p>

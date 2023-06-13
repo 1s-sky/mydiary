@@ -14,7 +14,6 @@ import com.diary.mydiary.model.AuthInfo;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/submit2")
 public class LoginController {
 	
 	@Autowired
@@ -29,7 +28,7 @@ public class LoginController {
 		return "loginHome";
 	}
 	
-	@PostMapping
+	@PostMapping("/loginSubmit")
 	public String submit(@Validated LoginCommand loginCommand, Errors errors, HttpSession session) {
 		if(errors.hasErrors()) {
 			return "login";
@@ -50,7 +49,7 @@ public class LoginController {
 		}
 	}
 	
-	@GetMapping("/submit2")
+	@GetMapping("/loginSubmit")
 	public String loginRedirect() {	
 		return "redirect:/";
 	}
