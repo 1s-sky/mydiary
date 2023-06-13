@@ -6,7 +6,7 @@
 <html>
 <body>
 <center>
-<form:form action="/addDiary" modelAttribute="diary">
+<form:form action="/adddiary" modelAttribute="diary">
 <h2><spring:message code="adddiary"/> </h2>
 <table>
 <tr>
@@ -29,5 +29,5 @@
 </form:form>
 </center>
 </body>
-<link rel="stylesheet" href="resources/css/home.css?a">
+<link rel="stylesheet" href="resources/css/diary.css?">
 </html>

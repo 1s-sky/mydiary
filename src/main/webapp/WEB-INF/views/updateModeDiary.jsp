@@ -22,6 +22,6 @@
   </table>
 </body>
 <script type="text/javascript" src="resources/js/updateDiary.js"></script>
-<link rel="stylesheet" href="resources/css/home.css?aa">
+<link rel="stylesheet" href="resources/css/diary.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </html>

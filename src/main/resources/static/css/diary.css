@@ -1,0 +1,73 @@
+@font-face {
+  font-family : 'prtnight';
+  src : url("Cafe24Oneprettynight-v2.0.otf")
+}
+html{
+    padding-top:20px;
+	font-family : 'prtnight';
+  	background-image: url("background-img.png");
+  	background-repeat: no-repeat;
+  	background-size : cover;
+}
+
+form{
+    width:25rem;
+    margin: auto;
+    color:#C7DBF2;
+    backdrop-filter: saturate(180%);
+    background-color: rgba(11, 15, 13, 0.582);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 5px 5px;
+}
+
+input{
+    width: 60%;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px 18px;
+}
+
+textarea {
+    width: 60%;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px 18px;
+}
+
+.normal-btn {
+    font-family : 'prtnight';
+	border: 1px;
+	background: #fff;
+	color: #000000;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 200ms ease;
+}
+.diary{
+    width: 200px;
+    height: 120px;
+    padding : 15px;
+    color:#C7DBF2;
+    backdrop-filter: saturate(180%);
+    background-color: rgba(11, 15, 13, 0.582);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 5px 5px;
+    text-align: center;
+}
+.update-btn{
+    font-family : 'prtnight';
+	border: 1px;
+	background: #fff;
+	color: #000000;
+	padding: 10px;
+	font-size: 10px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 200ms ease;
+}

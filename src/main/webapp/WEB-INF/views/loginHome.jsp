@@ -19,7 +19,7 @@
   <a href="./logout"><spring:message code="logout" /></a><br>
 </body>
 <script type="text/javascript" src="resources/js/drawDiary.js"></script>
-<link rel="stylesheet" href="resources/css/home.css?b">
+<link rel="stylesheet" href="resources/css/diary.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </script>
 </html>

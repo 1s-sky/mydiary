@@ -29,5 +29,5 @@
     </form:form>
 
 </body>
-<link rel="stylesheet" href="resources/css/home.css?ww">
+<link rel="stylesheet" href="resources/css/diary.css">
 </html>

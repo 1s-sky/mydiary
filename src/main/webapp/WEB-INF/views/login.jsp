@@ -14,10 +14,10 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 
 <form:form novalidate="novalidate" action="submit2" modelAttribute="loginCommand">
-	<p> <label> <spring:message code="id" />:<br>
+	<p> <label> <spring:message code="id" />:
 	<form:input path="id" />
 	<form:errors path="id" /> </label> </p>
-	<p> <label> <spring:message code="pw" />:<br>
+	<p> <label> <spring:message code="pw" />:
 	<form:input path="pw" /> <form:errors path="pw" /> </label> </p>
 	<form:errors /><br>
 	<button class="normal-btn" type="submit"> <spring:message code="submit" /> </button>
