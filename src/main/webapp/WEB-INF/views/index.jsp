@@ -9,18 +9,17 @@
 <title>Home</title>
 </head>
 <body>
-	<h2> MY DIARY </h2>
+<div class="container">
+<h2> MY DIARY </h2>
+
 	<c:if test="${empty authinfo}">
+	<div class="child">
 		<p><spring:message code="greeting1" /></p>
-		<a href="./signup"><spring:message code="signup" /></a><br>
-		<a href="./login"><spring:message code="login" /></a>
-	</c:if>
-	
-	<c:if test="${! empty authinfo}">
-	<!-- 로그인된 경우 ; 여기에 달력이랑 일기 정보 넣기..? -->
-	<c:import url="http://localhost:8080/loginHome"></c:import>
-		<p>${authinfo.id}님, <spring:message code="greeting2" /></p>
-		<a href="./logout"><spring:message code="logout" /></a><br>
+		</div>
+		<div class="child">
+		<button class="user-btn" type="button" onclick="location.href='/signup';"><spring:message code="signup" /></button>
+		<button class="user-btn" type="button" onclick="location.href='/login';"><spring:message code="login" /></button>
+		</div>
 	</c:if>
 
 </body>

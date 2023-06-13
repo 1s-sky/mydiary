@@ -15,15 +15,16 @@
 
 <form:form novalidate="novalidate" action="submit2" modelAttribute="loginCommand">
 	<p> <label> <spring:message code="id" />:
-	<form:input path="id" />
+	<form:input path="id" /><br>
 	<form:errors path="id" /> </label> </p>
 	<p> <label> <spring:message code="pw" />:
-	<form:input path="pw" /> <form:errors path="pw" /> </label> </p>
+	<form:input path="pw" /><br>
+	<form:errors path="pw" /> </label> </p>
 	<form:errors /><br>
-	<button class="normal-btn" type="submit"> <spring:message code="submit" /> </button>
+	<button class="user-btn" type="submit"> <spring:message code="login" /> </button>
+	<button class="user-btn" type="button" onclick="location.href='/';"><spring:message code="back" /></button>
 </form:form>
 
-	<a href="./"><spring:message code="back"/></a>
 </body>
 <link rel="stylesheet" href="resources/css/home.css?b">
 </html>

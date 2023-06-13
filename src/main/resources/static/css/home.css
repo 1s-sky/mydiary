@@ -32,5 +32,34 @@ form{
     box-shadow: 5px 5px;
 }
 
+.user-btn{
+    font-family : 'prtnight';
+    border: 0;
+     padding: 10px;
+     margin:5px;
+     display: inline-block;
+     text-align: center;
+   color: #000000;
+   background: #fff;
+   font-size: 14px;
+   border-radius: 5px;
+   position: relative;
+   box-sizing: border-box;
+   transition: all 200ms ease;
+}
+
+.container {
+	  font-family : 'prtnight';
+	  color : #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+.child {
+  margin:5px;
+}
+
 
 

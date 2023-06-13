@@ -16,7 +16,7 @@
     </c:forEach>
 </div>
   </table>
-  <a href="./logout"><spring:message code="logout" /></a><br>
+  <button class="user-btn" type="button" onclick="location.href='/logout';"><spring:message code="logout" /></button>
 </body>
 <script type="text/javascript" src="resources/js/drawDiary.js"></script>
 <link rel="stylesheet" href="resources/css/diary.css">
