@@ -1,6 +1,11 @@
 package com.diary.mydiary.controller;
 
 import com.diary.mydiary.model.Diary;
+import com.diary.mydiary.model.AuthInfo;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -19,13 +24,16 @@ public class DiaryDbRepository {
     @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
-
     //CREATE
-    public void addDiary(Diary diary){
+    public void addDiary(Diary diary, HttpServletRequest request){
+    	
+    	HttpSession session = request.getSession(false);
+    	AuthInfo currentUser = (AuthInfo) session.getAttribute("authinfo");
+    	
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         jdbcInsert.withTableName("diary").usingGeneratedKeyColumns("did");
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("uid", "aaa");
+        parameters.put("uid", currentUser.getId());
         parameters.put("title", diary.getTitle());
         parameters.put("text", diary.getText());
         parameters.put("xpos", 50);
@@ -35,9 +43,13 @@ public class DiaryDbRepository {
     }
 
     //READ
-    public List<Diary> findAll(){
-        List<Diary> result = (List<Diary>) jdbcTemplate.query("Select * from diary where uid='aaa'", diaryRowMapper());
-        return result;
+    public List<Diary> findAll(HttpServletRequest request){
+    	
+    	HttpSession session = request.getSession(false);
+    	AuthInfo currentUser = (AuthInfo) session.getAttribute("authinfo");
+        
+    	List<Diary> result = (List<Diary>) jdbcTemplate.query("Select * from diary where uid=?", diaryRowMapper(),currentUser.getId());
+    	return result;
     }
 
     //UPDATE
