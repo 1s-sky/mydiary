@@ -4,9 +4,10 @@ window.onload = () => {
     //마우스 눌렀을 때
     element.addEventListener('click', function(e) {
         event.currentTarget.draggable = false;
+        offset.did = e.target.id;
         $.ajax({
             type:"post",
-            url:"/deleteData",
+            url:"/deleteDiary",
             data:{ "did" : offset.did },
             dataType:"text",
             success:function(data){
