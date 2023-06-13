@@ -3,13 +3,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <body>
-<button type="button" class="normal-btn" onclick="location.href='/loginHome';">수정완료</button>
+<button type="button" class="normal-btn" onclick="location.href='/loginHome';"><spring:message code="updated"/></button>
+<center>
 <div id="container">
-    <form:form action="/updatediary?did=${diary.did}" modelAttribute="diary">
-    <div class="diary" id ="${diary.did}" style="position:absolute; left:${diary.xpos}px; top: ${diary.ypos}px"
-             draggable = false>
-
+    <form:form action="/updateDiary?did=${diary.did}" modelAttribute="diary" class="addDiary">
     <table>
+    <h2><spring:message code="updateDiary"/> </h2>
     <tr>
         <td> <form:input path="title" placeholder="{diary.title}"/> </td>
         <td> <form:errors path="title"/></td>
@@ -21,13 +20,12 @@
     <tr>
         <td colspan="2" align="center">
         <button class="normal-btn" type="submit"><spring:message code="submit"/></button>
-        <button class="normal-btn" type="reset"> <spring:message code="back"/></button>
+        <button class="normal-btn" type="reset" onclick="location.href='/updateMode';"> <spring:message code="back"/></button>
         </td>
     </tr>
     </table>
-            </div>
     </form:form>
-
+</center>
 </body>
 <link rel="stylesheet" href="resources/css/diary.css">
 </html>

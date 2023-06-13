@@ -6,7 +6,7 @@ window.onload = () => {
         event.currentTarget.draggable = false;
         $.ajax({
             type:"post",
-            url:"/deletedata",
+            url:"/deleteData",
             data:{ "did" : offset.did },
             dataType:"text",
             success:function(data){

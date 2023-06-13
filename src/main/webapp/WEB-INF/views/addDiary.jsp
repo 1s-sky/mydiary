@@ -6,7 +6,7 @@
 <html>
 <body>
 <center>
-<form:form action="/adddiary" modelAttribute="diary">
+<form:form action="/addDiary" modelAttribute="diary" class="addDiary">
 <h2><spring:message code="adddiary"/> </h2>
 <table>
 <tr>
@@ -22,12 +22,12 @@
 <tr>
     <td colspan="2" align="center">
     <button class="normal-btn" type="submit"><spring:message code="submit"/></button>
-    <button class="normal-btn" type="reset"> <spring:message code="back"/></button>
+    <button class="normal-btn" type="reset" onclick="location.href='/loginHome';"> <spring:message code="back"/></button>
     </td>
 </tr>
 </table>
 </form:form>
 </center>
 </body>
-<link rel="stylesheet" href="resources/css/diary.css?">
+<link rel="stylesheet" href="resources/css/diary.css">
 </html>

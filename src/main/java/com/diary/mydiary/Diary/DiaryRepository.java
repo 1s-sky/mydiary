@@ -36,8 +36,8 @@ public class DiaryRepository {
         parameters.put("uid", currentUser.getId());
         parameters.put("title", diary.getTitle());
         parameters.put("text", diary.getText());
-        parameters.put("xpos", 50);
-        parameters.put("ypos", 50);
+        parameters.put("xpos", 100);
+        parameters.put("ypos", 100);
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
         diary.setDid(key.intValue());
     }

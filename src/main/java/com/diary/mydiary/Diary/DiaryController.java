@@ -20,12 +20,12 @@ public class DiaryController {
     DiaryRepository repository;
 
     //일기추가하는 페이지
-    @GetMapping("/adddiary")
+    @GetMapping("/addDiary")
     public String addDiary(Diary diary){
         return "addDiary";
     }
     //수정페이지로 이동
-    @GetMapping("/updatemode")
+    @GetMapping("/updateMode")
     public String updateModeDiary(Model model, HttpServletRequest request){
         List<Diary> result = repository.findAll(request);
         model.addAttribute("diaryList", result);
@@ -42,7 +42,7 @@ public class DiaryController {
 
     //추가된 일기 데이터 받아와서 디비에 저장
     //커맨드 객체 사용
-    @PostMapping("/adddiary")
+    @PostMapping("/addDiary")
     public String addDiary_post(@Validated Diary diary, Errors errors, HttpServletRequest request){
         if(errors.hasErrors()){
             return "addDiary";
@@ -51,13 +51,13 @@ public class DiaryController {
         return "redirect:loginHome";
     }
 
-    @PostMapping("/updatediary")
+    @PostMapping("/updateDiary")
     public String updateDiary_post(@Validated Diary diary, Errors errors, HttpServletRequest request){
         if(errors.hasErrors()){
             return "updateDiary";
         }
         repository.updateText(diary);
-        return "redirect:updatemode";
+        return "redirect:updateMode";
     }
 
     //로그인하면 로그인 페이지로 연결

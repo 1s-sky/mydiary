@@ -10,8 +10,8 @@ window.onload = () => {
     //마우스 드래그
     element.addEventListener("mousemove", function(e) {
         if(!e.target.draggable) return ;
-        offset.x = (e.clientX-20) + "px";
-        offset.y = (e.clientY-20) + "px";
+        offset.x = (e.clientX-50) + "px";
+        offset.y = (e.clientY-50) + "px";
         e.target.style.left = offset.x;
         e.target.style.top  = offset.y;
         console.log(offset.x);
@@ -21,7 +21,7 @@ window.onload = () => {
         event.currentTarget.draggable = false;
         $.ajax({
             type:"post",
-            url:"/postData",
+            url:"/posData",
             data:{ "did" : offset.did, "xpos" : offset.x, "ypos" : offset.y},
             dataType:"text",
             success:function(data){
@@ -32,17 +32,3 @@ window.onload = () => {
     }, false);
     })
 }
-//    function onClick(){
-//        for(let i of diary_list) {
-//        $.ajax({
-//            type:"post",
-//            url:"/postData",
-//            data:{ "did" : diary_list[i].did, "xpos" : diary_list[i].x, "ypos" : diary_list.y},
-//            dataType:"text",
-//            success:function(data){
-//                console.log("통신결과");
-//                console.log(data);
-//            }
-//        })
-//        }
-//    }
