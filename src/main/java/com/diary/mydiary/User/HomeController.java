@@ -1,4 +1,4 @@
-package com.diary.mydiary.controller;
+package com.diary.mydiary.User;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,10 +8,10 @@ import com.diary.mydiary.model.User;
 
 @Controller
 public class HomeController {
-	/*@GetMapping("/home")
-	public String home() {
-		return "home";
-	}*/
+//	@GetMapping("/")
+//	public String home() {
+//		return "index";
+//	}
 	
 	@GetMapping(value = "/signup")
 	public String signup(Model model) {

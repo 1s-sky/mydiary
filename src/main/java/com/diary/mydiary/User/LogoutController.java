@@ -1,4 +1,4 @@
-package com.diary.mydiary.controller;
+package com.diary.mydiary.User;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

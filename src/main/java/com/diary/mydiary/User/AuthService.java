@@ -1,4 +1,4 @@
-package com.diary.mydiary.controller;
+package com.diary.mydiary.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

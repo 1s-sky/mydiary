@@ -1,28 +1,33 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <body>
 <button type="button" class="normal-btn" onclick="location.href='/loginHome';">수정완료</button>
 <div id="container">
-    <c:forEach var="item" items="${diaryList}">
+    <form:form action="/updatediary?did=${diary.did}" modelAttribute="diary">
+    <div class="diary" id ="${diary.did}" style="position:absolute; left:${diary.xpos}px; top: ${diary.ypos}px"
+             draggable = false>
 
-        <div class="diary" id ="${item.did}" style="position:absolute; left:${item.xpos}px; top: ${item.ypos}px"
-         draggable = false>
-         <div>
-            ${item.title}<br>
-            ${item.text}
-            <p>
-            <button class="update-btn" type="button" onclick="location.href='/loginHome';">수정</button>
-            <button class="update-btn" type="button" onclick="location.href='/loginHome';">삭제</button>
-            </p>
-        </div>
-        </div>
-    </c:forEach>
-</div>
-  </table>
+    <table>
+    <tr>
+        <td> <form:input path="title" placeholder="{diary.title}"/> </td>
+        <td> <form:errors path="title"/></td>
+    </tr>
+    <tr>
+        <td> <form:textarea path="text" placeholder="{diary.text}"/></td>
+        <td><form:errors path="text"/></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+        <button class="normal-btn" type="submit"><spring:message code="submit"/></button>
+        <button class="normal-btn" type="reset"> <spring:message code="back"/></button>
+        </td>
+    </tr>
+    </table>
+            </div>
+    </form:form>
+
 </body>
-<script type="text/javascript" src="resources/js/drawDiary.js"></script>
-<link rel="stylesheet" href="resources/css/home.css?aa">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-</script>
+<link rel="stylesheet" href="resources/css/home.css?ww">
 </html>

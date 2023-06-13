@@ -1,5 +1,6 @@
-package com.diary.mydiary.controller;
+package com.diary.mydiary.Diary;
 
+import com.diary.mydiary.Diary.DiaryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,12 +11,17 @@ import java.util.Map;
 @RestController
 public class DiaryRestController {
     @Autowired
-    private DiaryDbRepository repository;
+    private DiaryRepository repository;
 
     //위치가 바뀌면 바뀐 위치를 디비에 저장줌
     @PostMapping("/postData")
     public void PostData(@RequestParam Map<String, Object> vo) {
         repository.updatePosition(vo);
+    }
+
+    @PostMapping("/deletediary")
+    public void DeleteDiary(@RequestParam Map<String, Object> vo) {
+        repository.deleteDiary(vo);
     }
 
 }

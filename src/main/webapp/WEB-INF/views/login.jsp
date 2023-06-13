@@ -25,5 +25,5 @@
 
 	<a href="./"><spring:message code="back"/></a>
 </body>
-<link rel="stylesheet" href="resources/css/home.css">
+<link rel="stylesheet" href="resources/css/home.css?b">
 </html>

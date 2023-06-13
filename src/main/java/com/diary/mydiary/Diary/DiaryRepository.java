@@ -1,4 +1,4 @@
-package com.diary.mydiary.controller;
+package com.diary.mydiary.Diary;
 
 import com.diary.mydiary.model.Diary;
 import com.diary.mydiary.model.AuthInfo;
@@ -13,16 +13,16 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@Repository
-public class DiaryDbRepository {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+import java.util.Optional;
 
-    @Autowired
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
+public class DiaryRepository {
+
+    private final JdbcTemplate jdbcTemplate;
+    public DiaryRepository(DataSource dataSource) {jdbcTemplate = new JdbcTemplate(dataSource);}
 
     //CREATE
     public void addDiary(Diary diary, HttpServletRequest request){
@@ -44,12 +44,19 @@ public class DiaryDbRepository {
 
     //READ
     public List<Diary> findAll(HttpServletRequest request){
-    	
     	HttpSession session = request.getSession(false);
     	AuthInfo currentUser = (AuthInfo) session.getAttribute("authinfo");
         
     	List<Diary> result = (List<Diary>) jdbcTemplate.query("Select * from diary where uid=?", diaryRowMapper(),currentUser.getId());
     	return result;
+    }
+
+    public Optional<Diary> findByDid(String did, HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        AuthInfo currentUser = (AuthInfo) session.getAttribute("authinfo");
+
+        List<Diary> result = (List<Diary>) jdbcTemplate.query("Select * from diary where uid=? and did=?", diaryRowMapper(),currentUser.getId(),did);
+        return result.stream().findAny();
     }
 
     //UPDATE
@@ -75,8 +82,10 @@ public class DiaryDbRepository {
 
 
     //DELETE
-    public void deleteDiary(Diary diary) {
-        String sql = "";
+    public void deleteDiary(Map<String, Object> vo) {
+        String sql = "DELETE FROM diary WHERE did=?";
+        int did = Integer.parseInt(vo.get("did").toString());
+        jdbcTemplate.update(sql,did);
     }
 
     private RowMapper<Diary> diaryRowMapper() {

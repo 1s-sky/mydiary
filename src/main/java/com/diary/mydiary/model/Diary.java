@@ -1,19 +1,18 @@
 package com.diary.mydiary.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 public class Diary {
-    @JsonIgnore
     int did;
-    @JsonIgnore
     String uid;
-    @NotEmpty
+    @NotEmpty(message = " * 제목을 작성해주세요.")
     String title;
+    @Size(min=5, message=" * {min}글자이상을 기록해주세요.")
     String text;
-    @JsonIgnore
     int xpos;
-    @JsonIgnore
     int ypos;
 
     public Diary(){}
