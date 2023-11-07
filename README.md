@@ -1,11 +1,23 @@
-# mydiary
+# 조각일기
 ![gif](https://github.com/1s-sky/mydiary/assets/63232417/8f7cbdca-07aa-47fc-b47b-17f09001866d)
+
+<br>
+
+## 맡은부분
+
+50%) 이승원 - 조각일기 CRUD
+
+50%) 이희원 - 로그인
+
+<br>
+
+## 개요
 ![슬라이드1](https://github.com/1s-sky/mydiary/assets/63232417/26895411-9b17-4a23-b175-1814b5d66afa)
 ![슬라이드2](https://github.com/1s-sky/mydiary/assets/63232417/9f643d29-1d94-45a9-a556-cf9dded0f332)
-![슬라이드5](https://github.com/1s-sky/mydiary/assets/63232417/b9bb89f9-5044-4a40-a82e-69fd375348be)
-![슬라이드6](https://github.com/1s-sky/mydiary/assets/63232417/e271a4cb-a0b8-4996-9e68-1fdb4dfeaf67)
-![슬라이드7](https://github.com/1s-sky/mydiary/assets/63232417/3c8dbd8d-7a38-46a3-a1ca-dad6fb834efa)
-![슬라이드8](https://github.com/1s-sky/mydiary/assets/63232417/d5ebcf3f-911f-4191-9607-bbd18b2764d5)
+
+<br>
+
+## 프로그램 구조(맡은 부분만)
 ![슬라이드9](https://github.com/1s-sky/mydiary/assets/63232417/11578270-1b32-43e4-aa66-d704481266e7)
 ![슬라이드10](https://github.com/1s-sky/mydiary/assets/63232417/3b8f7c1e-3719-4165-b5bd-7f79bf1914b5)
 ![슬라이드11](https://github.com/1s-sky/mydiary/assets/63232417/8d580311-244e-4cd2-9d6b-cfcd2695e030)
@@ -13,5 +25,8 @@
 ![슬라이드13](https://github.com/1s-sky/mydiary/assets/63232417/f3375a34-1635-4ce8-a9de-6ffee7ab29fc)
 ![슬라이드14](https://github.com/1s-sky/mydiary/assets/63232417/5df42772-4a6f-4c0e-8b42-bd82d0d930da)
 ![슬라이드15](https://github.com/1s-sky/mydiary/assets/63232417/f668c301-b7b8-4d6b-a291-6752b683c151)
-![슬라이드16](https://github.com/1s-sky/mydiary/assets/63232417/d82c2ae2-77e9-44c3-95d3-8a042b516b79)
+
+<br>
+
+## 개선점
 ![슬라이드17](https://github.com/1s-sky/mydiary/assets/63232417/aeecca14-98e7-4134-9ad0-911198493484)
